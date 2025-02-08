@@ -3,4 +3,5 @@ ollama
 langchain
 langchain_ollama
 PyMuPDF
-fitz
+nltk
+
