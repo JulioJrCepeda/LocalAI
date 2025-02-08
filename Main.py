@@ -1,5 +1,5 @@
 import streamlit as st
-from AI import AI;
+import AI
 import subprocess
 
 # Define the LLM model you want to pull
