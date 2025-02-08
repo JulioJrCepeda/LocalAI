@@ -1,5 +1,24 @@
 import streamlit as st
 from AI import AI;
+import subprocess
+
+# Define the LLM model you want to pull
+model_name = "llama3"
+
+# Check if the model needs to be pulled
+if "model_pulled" not in st.session_state:
+    # Run the 'ollama pull' command to pull the LLM
+    result = subprocess.run(["ollama", "pull", model_name], capture_output=True, text=True)
+
+    if result.returncode == 0:
+        st.session_state.model_pulled = True
+        st.success(f"Model '{model_name}' pulled successfully!")
+    else:
+        st.session_state.model_pulled = False
+        st.error(f"Failed to pull model '{model_name}': {result.stderr}")
+
+
+
 
 # Initialize the AI instance only once
 if "ai" not in st.session_state:
