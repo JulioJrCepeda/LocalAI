@@ -1,7 +1,0 @@
-streamlit
-ollama
-langchain
-langchain_ollama
-PyMuPDF
-nltk
-subprocess
