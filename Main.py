@@ -8,7 +8,7 @@ model_name = "llama3"
 # Check if the model needs to be pulled
 if "model_pulled" not in st.session_state:
     # Run the 'ollama pull' command to pull the LLM
-    subprocess.run("ollama", "serve")
+    subprocess.run(["ollama", "serve"])
     result = subprocess.run(["ollama", "pull", model_name], capture_output=True, text=True)
 
     if result.returncode == 0:
